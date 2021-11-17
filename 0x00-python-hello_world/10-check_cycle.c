@@ -1,20 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "list.h"
+#include "lists.h"
+
 /**
-* check_cycle - check for cycle in a linked list
+* check_cycle - check for cycle
 * @list: the list
 * Return: has cycle or not
 */
 int check_cycle(listint_t *list)
 {
-listint_t *f = list;
-listint_t *s = list;
-while (f && s && f->next)
+listint_t *fastp = list;
+listint_t *slowp = list;
+if (list == NULL || list->next == NULL)
+return (0);
+while (fastp && fastp->next && fastp->next->next)
 {
-s = s->next;
-f = (f->next)->next;
-if (s == f)
+slowp = slowp->next;
+fastp = fastp->next->next;
+if (slowp->n == fastp->n)
 return (1);
 }
 return (0);
