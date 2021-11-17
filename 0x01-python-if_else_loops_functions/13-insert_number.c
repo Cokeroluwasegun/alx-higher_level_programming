@@ -1,50 +1,37 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
+
 /**
- * insert_node- insert node in a sorted list
- * @head: head of node
- * @number: value of node to be inserted
- * Return: node
- */
+* insert_node - insert new node in list
+* @head: head of list
+* @number: the number to add
+* Return: pointer to node
+*/
 listint_t *insert_node(listint_t **head, int number)
 {
-listint_t *new, *h = *head;
-new = malloc(sizeof(listint_t));
-if (!new)
+listint_t *newNode;
+listint_t *curr;
+if (!head)
 return (NULL);
-new->n = number ;
-if (*head == NULL)
+if (!*head)
 {
-new->next = NULL;
-*head = new;
-return (*head);
+newNode = add_nodeint_end(head, number);
+return (newNode);
 }
-if (number < h->n)
-{
-new->next = h->next;
-*head = new;
-return(new);
-}
-while (h)
-{
-if (number > (h->next)->n)
-h = h->next;
-else
-break;
-}
-if (h->next == NULL && number > h->n)
-{
-h->next = new;
-new->next = NULL;
-h = new;
-return (h);
-}
-if (h->next != NULL)
-{
-new->next = h->next;
-h->next = new;
-h = new;
-return (h);
-}
+curr = *head;
+newNode = malloc(sizeof(listint_t));
+if (!newNode)
 return (NULL);
+newNode->n = number;
+if (curr->n > number) {
+newNode->next = *head;
+*head = newNode;
+return(newNode);
+}
+while (curr->next && newNode->n > curr->next->n )
+curr = curr->next;
+newNode->next = curr->next;
+curr->next = newNode;
+return (newNode);
 }
