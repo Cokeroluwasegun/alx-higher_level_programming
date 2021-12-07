@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 class Square:
-    """Square that defines a square by: (based on 2-square.py)"""
     def __init__(self, size=0):
         if isinstance(size, int):
             if size < 0:
@@ -10,7 +9,19 @@ class Square:
         else:
             raise TypeError("size must be an integer")
 
-        
     def area(self):
-        """that returns the current square area"""
         return (self.__size ** 2)
+
+    @property
+    def size(self):
+        return (self.__size)
+
+    @size.setter
+    def size(self, value):
+        if isinstance(value, int):
+            if value < 0:
+                raise ValueError("size must be >= 0")
+            else:
+                self.__size = value
+        else:
+            raise TypeError("size must be an integer")

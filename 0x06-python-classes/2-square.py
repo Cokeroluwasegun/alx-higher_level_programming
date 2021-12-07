@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 class Square:
+    """ This class defines a square by: (based on 1-square.py)"""
     def __init__(self, size=0):
         if isinstance(size, int):
             if size < 0:
