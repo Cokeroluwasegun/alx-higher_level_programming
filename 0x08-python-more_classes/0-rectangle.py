@@ -1,4 +1,4 @@
-#!/usr/bin/python3
 class Rectangle:
-    """This is an empty class"""
-    pass
+    "This is my custom class for Rectangle"
+    def __init__(self):
+        pass
