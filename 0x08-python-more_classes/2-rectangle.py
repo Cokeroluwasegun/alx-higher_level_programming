@@ -12,7 +12,7 @@ class Rectangle:
         self.height = height
 
     @property
-    def width(self, value):
+    def width(self):
         return self.__width
 
     @width.setter
