@@ -11,6 +11,7 @@ class Rectangle:
     methods: area, perimeter, print, str, repr, and del.
     """
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         self.width = width
@@ -59,7 +60,7 @@ class Rectangle:
         if self.__height is 0 or self.__width is 0:
             return printrec
         for i in range(self.__height):
-            printrec += ("#" * self.__width)
+            printrec += str(self.print_symbol * self.__width)
             printrec += "\n"
         return printrec[:-1]
 
@@ -71,3 +72,13 @@ class Rectangle:
         """object deletion method call"""
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """staticmethod that returns the biggest rectangle"""
+        if isinstance(rect_1, Rectangle) is False:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        elif isinstance(rect_2, Rectangle) is False:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        else:
+            return rect_1 if rect_1.area() >= rect_2.area() else rect_2
