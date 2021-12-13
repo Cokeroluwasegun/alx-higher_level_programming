@@ -1,4 +1,8 @@
+#!/usr/bin/python3
+"""
+Rectangle module.
+This module provides a Rectangle class.
+"""
 class Rectangle:
-    """This is my custom class for Rectangle"""
-    def __init__(self):
-        pass
+    """"An empty Rectangle class."""
+    pass
