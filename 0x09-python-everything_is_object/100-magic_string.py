@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-def magic_string(arr=[]):
-    arr += ["Hoblerton,"]
-    return(" ".join(arr))
+def magic_string():
+    i += 1
+    print("Holberton" * i)
