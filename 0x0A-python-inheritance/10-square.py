@@ -34,3 +34,26 @@ class Rectangle(BaseGeometry):
         self.__height = self.integer_validator('height', height)
         self.__width = width
         self.__height = height
+
+    def area(self):
+        """
+        return area of a rectangle
+        """
+        return self.__width * self.__height
+
+    def __str__(self):
+        """
+        string representation of a rectangle
+        """
+        p = '[Rectangle] ' + str(self.__width) + '/' + str(self.__height)
+        return p
+
+
+class Square(Rectangle):
+    def __init__(self, size):
+        """
+        initialize an object of square with
+        @size: size of square
+        """
+        self.__size = self.integer_validator('size', size)
+        Rectangle.__init__(self, size, size)
