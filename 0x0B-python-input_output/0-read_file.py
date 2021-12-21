@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+   function that reads a text file (UTF8) and prints it to stdout:
+"""
+
+
 def number_of_lines(filename=""):
     """
     function that returns the number of lines
