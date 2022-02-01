@@ -1,2 +1,2 @@
---script that creates databases hbtn_0c_0 in MySql server.
+-- creates a database called hbtn_0c_0 if it does not already exist.
 CREATE DATABASE IF NOT EXISTS hbtn_0c_0;
