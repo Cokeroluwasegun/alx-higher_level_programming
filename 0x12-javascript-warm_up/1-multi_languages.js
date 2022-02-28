@@ -1,4 +1,4 @@
 #!/usr/bin/node
-//script that prints 3 lines
-const a = 'C is fun\nPython is cool\nJavascript is amazing';
-console.log(a);
+console.log('C is fun');
+console.log('Python is cool');
+console.log('Javascript is amazing');
