@@ -9,17 +9,17 @@ class Rectangle {
     }
     // print
     print () {
-	for (let i = 0; i < this.height; i++) {
-	    for (let j = 0; j < this.width; j++) {
-		process.stdout.write('X');
-	    }
-	process.stdout.write('\n');
-	}
+    let i;
+    for (i = 0; i < this.height; i++) {
+      console.log('X'.repeat(this.width));
     }
+  }
     // rotate
     rotate () {
-	[this.width, this.height] = [this.height, this.width];
-    }
+	const temp = this.width;
+	this.width = this.height;
+	this.height = temp;
+  }
     // double
     double () {
 	this.width *= 2;
