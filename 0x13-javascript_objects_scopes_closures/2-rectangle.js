@@ -1,11 +1,11 @@
 #!/usr/bin/node
 // Script that creates empty
 class Rectangle {
-constructor (w,h) {
-if (w > 0 && h > 0) {
-this.width = w;
-this.height = h;
-}
-}
+  constructor (h, w) {
+    if (w > 0 && h > 0) {
+      this.width = w;
+      this.height = h;
+    }
+  }
 }
 module.exports = Rectangle;
