@@ -3,11 +3,19 @@ def find_peak(list_of_integers):
     """
     find the peak element in a list
     """
-
-    if list_of_integers == []:
-        return None
-    arr = list_of_integers
-    for i in range(1, len(arr)-1):
-        if arr[i] > arr[i-1] and arr[i] > arr[i+1]:
-            return arr[i]
-    return max(arr[0], arr[-1])
+    start = 0
+    length = len(list_of_integers)
+    end = length - 1
+    peak = None
+    while start <= end:
+        mid = (start + end) // 2
+        peak = list_of_integers[mid]
+        left = list_of_integers[mid - 1]
+        right = list_of_integers[mid + 1]
+        if (mid == 0 or peak >= left) and (mid == length - 1 or peak >= right):
+            break
+        elif mid < length - 1 and peak < right:
+            start = mid + 1
+        else:
+            end = mid - 1
+    return peak
