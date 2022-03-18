@@ -7,4 +7,4 @@ with urllib.request.urlopen('https://intranet.hbtn.io/status') as f:
     print('Body response:')
     print('\t- type:', type(req))
     print('\t- content:', req)
-    print('\t- utf8 content:', req.decode('utf-8'))
+    print('\t- utf8 content:', req.decode('ascii'))
